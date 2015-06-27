@@ -60,8 +60,12 @@
 					<string>entity.name.function.smt</string>
 				</dict>
 			</dict>
+			<key>comment</key>
+			<string>define-fun
+                     define-fun-rec
+                     define-sort</string>
 			<key>match</key>
-			<string>(\b(?i:(define-sort|define-fun))\b)(\s+)((\w|\.|\||_|@|%|\-|\!|\?)*)</string>
+			<string>(\b(?i:(define-fun|define-fun-rec|define-sort))\b)(\s+)((\w|\.|\||_|@|%|\-|\!|\?)*)</string>
 			<key>name</key>
 			<string>meta.function.define.smt</string>
 		</dict>
@@ -79,6 +83,10 @@
 					<string>entity.name.function.smt</string>
 				</dict>
 			</dict>
+			<key>comment</key>
+			<string>declare-const
+                     declare-fun
+                     declare-sort</string>
 			<key>match</key>
 			<string>(\b(?i:(declare-sort|declare-fun|declare-const))\b)(\s+)((\w|\.|\||_|@|%|\-|\!|\?)*)</string>
 			<key>name</key>
@@ -118,12 +126,85 @@
 			<string>variable.other.global.smt</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>!  (??FIX)  -- also where does **ite** come from?
+                     _
+                     as
+                     exists
+                     forall
+                     let
+                     par</string>
 			<key>match</key>
-			<string>\b(?i:let|ite|exists|forall|distinct|not|par)\b</string>
+			<string>\b(?i:as|let|ite|exists|forall|distinct|not|par|_)\b</string>
 			<key>name</key>
 			<string>keyword.control.smt</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>:all-statistics               (??FIX)
+                      :assertion-stack-levels
+                      :authors
+                      :chainable
+                      :definition
+                      :diagnostic-output-channel
+                      :error-behavior
+                      :extensions
+                      :funs
+                      :funs-description
+                      :global-declarations
+                      :interactive-mode
+                      :language
+                      :left-assoc
+                      :name
+                      :named
+                      :notes
+                      :pattern
+                      :print-success
+                      :produce-assignments
+                      :produce-models
+                      :produce-proofs
+                      :produce-unsat-assumptions
+                      :produce-unsat-cores
+                      :random-seed
+                      :reason-unknown
+                      :regular-output-channel
+                      :reproducible-resource-limit
+                      :right-assoc
+                      :sorts
+                      :sorts-description
+                      :status
+                      :theories
+                      :values
+                      :verbosity
+                      :version</string>
+			<key>match</key>
+			<string>\b(?i:(version|verbosity))\b</string>
+			<key>name</key>
+			<string>keyword.other.predefined.smt</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>assert
+                     check-sat
+                     check-sat-assuming
+                     echo
+                     exit
+                     get-assertions
+                     get-assignment
+                     get-info
+                     get-model
+                     get-option
+                     get-proof
+                     get-unsat-assumptions
+                     get-unsat-core
+                     get-value
+                     pop
+                     push
+                     reset
+                     reset-assertions
+                     set-info
+                     set-logic
+                     set-option</string>
 			<key>match</key>
 			<string>\b(?i:assert|check-sat|set-logic)\b</string>
 			<key>name</key>
@@ -137,7 +218,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(_|BitVec|select|concat|bvnot|bvneg|bvand|bvor|bvxor|bvadd|bvmul|bvudiv|bvurem|bvshl|bvlshr|bvult)\b</string>
+			<string>\b(BitVec|select|concat|bvnot|bvneg|bvand|bvor|bvxor|bvadd|bvmul|bvudiv|bvurem|bvshl|bvlshr|bvult|bv[0-9]+)\b</string>
 			<key>name</key>
 			<string>keyword.operator.bitvector.smt</string>
 		</dict>
@@ -148,8 +229,24 @@
 			<string>keyword.operator.smt</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>Bool
+                     continued-execution
+                     error
+                     false
+                     immediate-exit
+                     incomplete
+                     logic
+                     memout
+                     sat
+                     success
+                     theory
+                     true
+                     unknown
+                     unsupported
+                     unsat</string>
 			<key>match</key>
-			<string>\b(Bool|true|false|bv[0-9]+)\b</string>
+			<string>\b(Bool|true|false)\b</string>
 			<key>name</key>
 			<string>constant.language.smt</string>
 		</dict>
