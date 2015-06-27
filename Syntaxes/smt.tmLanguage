@@ -62,8 +62,8 @@
 			</dict>
 			<key>comment</key>
 			<string>define-fun
-                     define-fun-rec
-                     define-sort</string>
+                       define-fun-rec
+                       define-sort</string>
 			<key>match</key>
 			<string>(\b(?i:(define-fun|define-fun-rec|define-sort))\b)(\s+)((\w|\.|\||_|@|%|\-|\!|\?)*)</string>
 			<key>name</key>
@@ -85,8 +85,8 @@
 			</dict>
 			<key>comment</key>
 			<string>declare-const
-                     declare-fun
-                     declare-sort</string>
+                       declare-fun
+                       declare-sort</string>
 			<key>match</key>
 			<string>(\b(?i:(declare-sort|declare-fun|declare-const))\b)(\s+)((\w|\.|\||_|@|%|\-|\!|\?)*)</string>
 			<key>name</key>
@@ -178,7 +178,7 @@
                       :verbosity
                       :version</string>
 			<key>match</key>
-			<string>\b(?i:(version|verbosity))\b</string>
+			<string>\b((version|verbosity))\b</string>
 			<key>name</key>
 			<string>keyword.other.predefined.smt</string>
 		</dict>
