@@ -119,7 +119,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:let|ite)\b</string>
+			<string>\b(?i:let|ite|exists|forall|distinct|assert|not|check-sat)\b</string>
 			<key>name</key>
 			<string>keyword.control.smt</string>
 		</dict>
@@ -131,7 +131,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(BitVec|select|concat|or)\b</string>
+			<string>\b(_|BitVec|select|concat|bvnot|bvneg|bvand|bvor|bvxor|bvadd|bvmul|bvudiv|bvurem|bvshl|bvlshr|bvult)\b</string>
 			<key>name</key>
 			<string>keyword.operator.bitvector.smt</string>
 		</dict>
@@ -143,7 +143,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:null|nil)\b</string>
+			<string>\b(Bool|true|false|bv[0-9]+)\b</string>
 			<key>name</key>
 			<string>constant.language.smt</string>
 		</dict>
@@ -158,6 +158,20 @@
 			<string>\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\b</string>
 			<key>name</key>
 			<string>constant.numeric.smt</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>
+				Just  = for the moment.
+			</string>
+			<key>match</key>
+			<string>(?x)
+				(?&lt;=(\s|\()) # preceded by space or (
+				( = )
+				(?=(\s|\()) # followed by space or (
+				</string>
+			<key>name</key>
+			<string>keyword.operator.logical.smt</string>
 		</dict>
 		<dict>
 			<key>begin</key>
