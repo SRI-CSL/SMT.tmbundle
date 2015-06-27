@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>contactEmailRot13</key>
+	<string>vnz@pfy.fev.pbz</string>
+	<key>contactName</key>
+	<string>Ian A Mason</string>
+	<key>description</key>
+	<string>A "Satisfiability Modulo Theories" bundle for the SMT-LIB2 language, http://smtlib.cs.uiowa.edu/.</string>
+	<key>name</key>
+	<string>SMT</string>
+	<key>uuid</key>
+	<string>21D008B6-EE23-4C43-8C74-1FC7C7138934</string>
+</dict>
+</plist>
