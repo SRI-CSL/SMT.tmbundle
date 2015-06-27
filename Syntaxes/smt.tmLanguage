@@ -80,7 +80,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(\b(?i:(declare-sort|declare-fun))\b)(\s+)((\w|\-|\!|\?)*)</string>
+			<string>(\b(?i:(declare-sort|declare-fun|declare-const))\b)(\s+)((\w|\-|\!|\?)*)</string>
 			<key>name</key>
 			<string>meta.function.declare.smt</string>
 		</dict>
@@ -119,9 +119,15 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:let|ite|exists|forall|distinct|assert|not|check-sat)\b</string>
+			<string>\b(?i:let|ite|exists|forall|distinct|not|par)\b</string>
 			<key>name</key>
 			<string>keyword.control.smt</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(?i:assert|check-sat)\b</string>
+			<key>name</key>
+			<string>keyword.control.commands.smt</string>
 		</dict>
 		<dict>
 			<key>match</key>
