@@ -61,7 +61,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(\b(?i:(define-sort|define-fun))\b)(\s+)((\w|\-|\!|\?)*)</string>
+			<string>(\b(?i:(define-sort|define-fun))\b)(\s+)((\w|\.|\||_|@|%|\-|\!|\?)*)</string>
 			<key>name</key>
 			<string>meta.function.define.smt</string>
 		</dict>
@@ -80,7 +80,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(\b(?i:(declare-sort|declare-fun|declare-const))\b)(\s+)((\w|\-|\!|\?)*)</string>
+			<string>(\b(?i:(declare-sort|declare-fun|declare-const))\b)(\s+)((\w|\.|\||_|@|%|\-|\!|\?)*)</string>
 			<key>name</key>
 			<string>meta.function.declare.smt</string>
 		</dict>
@@ -125,7 +125,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:assert|check-sat)\b</string>
+			<string>\b(?i:assert|check-sat|set-logic)\b</string>
 			<key>name</key>
 			<string>keyword.control.commands.smt</string>
 		</dict>
