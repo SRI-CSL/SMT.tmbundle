@@ -127,7 +127,7 @@
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>!  (??FIX)  -- also where does **ite** come from?
+			<string>! FIXME 
                      _
                      as
                      exists
@@ -135,7 +135,7 @@
                      let
                      par</string>
 			<key>match</key>
-			<string>\b(?i:as|let|ite|exists|forall|distinct|not|par|_)\b</string>
+			<string>\b(?i:as|let|exists|forall|distinct|par|_)\b</string>
 			<key>name</key>
 			<string>keyword.control.smt</string>
 		</dict>
@@ -213,13 +213,16 @@
                      set-logic
                      set-option</string>
 			<key>match</key>
-			<string>\b(?i:assert|check-sat|set-logic)\b</string>
+			<string>\b(?i:assert|check-sat|check-sat-assuming|echo|exit
+                     |get-assertions|get-assignment|get-info|get-model|get-option
+                     |get-proof|get-unsat-assumptions|get-unsat-core|get-value
+					 |pop|push|reset|reset-assertions|set-info|set-logic|set-option)\b</string>
 			<key>name</key>
 			<string>keyword.control.commands.smt</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:not|or|and|xor|=&gt;)\b</string>
+			<string>\b(?i:ite|not|or|and|xor)\b</string>
 			<key>name</key>
 			<string>keyword.operator.core.smt</string>
 		</dict>
