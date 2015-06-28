@@ -141,7 +141,9 @@
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>:all-statistics               (??FIX)
+			<string>
+				FIXME word boundaries are needed here.
+			          :all-statistics              
                       :assertion-stack-levels
                       :authors
                       :chainable
@@ -178,7 +180,12 @@
                       :verbosity
                       :version</string>
 			<key>match</key>
-			<string>\b((version|verbosity))\b</string>
+			<string>(\:)(assertion-stack-levels|authors|chainable|definition|diagnostic-output-channel
+                      |error-behavior|extensions|funs|funs-description|global-declarations|interactive-mode
+                      |language|left-assoc|name|named|notes|pattern|print-success|produce-assignments
+                      |produce-models|produce-proofs|produce-unsat-assumptions|produce-unsat-cores
+                      |random-seed|reason-unknown|regular-output-channel|reproducible-resource-limit|right-assoc
+                      |sorts|sorts-description|status|theories|values|verbosity|version)</string>
 			<key>name</key>
 			<string>keyword.other.predefined.smt</string>
 		</dict>
