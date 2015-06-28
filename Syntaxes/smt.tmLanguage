@@ -212,7 +212,13 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:array|store|extract|or)\b</string>
+			<string>\b(?i:not|or|and|xor|=&gt;)\b</string>
+			<key>name</key>
+			<string>keyword.operator.core.smt</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(?i:array|store|extract)\b</string>
 			<key>name</key>
 			<string>keyword.operator.array.smt</string>
 		</dict>
@@ -221,6 +227,46 @@
 			<string>\b(BitVec|select|concat|bvnot|bvneg|bvand|bvor|bvxor|bvadd|bvmul|bvudiv|bvurem|bvshl|bvlshr|bvult|bv[0-9]+)\b</string>
 			<key>name</key>
 			<string>keyword.operator.bitvector.smt</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(Int|div|mod|abs)\b</string>
+			<key>name</key>
+			<string>keyword.operator.ints.smt</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>
+			    roundNearestTiesToEven RNE 
+                roundNearestTiesToAway RNA 
+                roundTowardPositive    RTP 
+                roundTowardNegative    RTN 
+                roundTowardZero        RTZ 
+               
+			    Float16 Float32 Float64 Float128
+			 
+			    +oo  
+				-oo
+			  
+			    +zero
+			    -zero
+</string>
+			<key>match</key>
+			<string>\b(RoundingMode|FloatingPoint|Nan|div|mod|abs)\b</string>
+			<key>name</key>
+			<string>keyword.operator.floatingpoint.smt</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(Real)\b</string>
+			<key>name</key>
+			<string>keyword.operator.reals.smt</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(divisible|to_real|to_int|is_int)\b</string>
+			<key>name</key>
+			<string>keyword.operator.reals_ints.smt</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -265,12 +311,12 @@
 		<dict>
 			<key>comment</key>
 			<string>
-				Just  = for the moment.
+				The symbols (always quirky in regex).
 			</string>
 			<key>match</key>
 			<string>(?x)
 				(?&lt;=(\s|\()) # preceded by space or (
-				( = )
+				( &gt; | &lt; | &gt;= | &lt;= | =&gt; | = | ! | [*/+-] )
 				(?=(\s|\()) # followed by space or (
 				</string>
 			<key>name</key>
