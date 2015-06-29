@@ -2,146 +2,139 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>comment</key>
-	<string></string>
-	<key>fileTypes</key>
-	<array>
-		<string>smt2</string>
-		<string>smt</string>
-	</array>
-	<key>name</key>
-	<string>smt</string>
-	<key>patterns</key>
-	<array>
-		<dict>
-			<key>begin</key>
-			<string>(^[ \t]+)?(?=;)</string>
-			<key>beginCaptures</key>
+	<key>changed</key>
+	<dict>
+		<key>patterns</key>
+		<array>
 			<dict>
-				<key>1</key>
+				<key>begin</key>
+				<string>(^[ \t]+)?(?=;)</string>
+				<key>beginCaptures</key>
 				<dict>
-					<key>name</key>
-					<string>punctuation.whitespace.comment.leading.smt</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>(?!\G)</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>begin</key>
-					<string>;</string>
-					<key>beginCaptures</key>
+					<key>1</key>
 					<dict>
-						<key>0</key>
-						<dict>
-							<key>name</key>
-							<string>punctuation.definition.comment.smt</string>
-						</dict>
+						<key>name</key>
+						<string>punctuation.whitespace.comment.leading.smt</string>
 					</dict>
-					<key>end</key>
-					<string>\n</string>
-					<key>name</key>
-					<string>comment.line.semicolon.smt</string>
 				</dict>
-			</array>
-		</dict>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>storage.type.function-type.smt</string>
-				</dict>
-				<key>4</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.function.smt</string>
-				</dict>
+				<key>end</key>
+				<string>(?!\G)</string>
+				<key>patterns</key>
+				<array>
+					<dict>
+						<key>begin</key>
+						<string>;</string>
+						<key>beginCaptures</key>
+						<dict>
+							<key>0</key>
+							<dict>
+								<key>name</key>
+								<string>punctuation.definition.comment.smt</string>
+							</dict>
+						</dict>
+						<key>end</key>
+						<string>\n</string>
+						<key>name</key>
+						<string>comment.line.semicolon.smt</string>
+					</dict>
+				</array>
 			</dict>
-			<key>comment</key>
-			<string>define-fun
+			<dict>
+				<key>captures</key>
+				<dict>
+					<key>2</key>
+					<dict>
+						<key>name</key>
+						<string>storage.type.function-type.smt</string>
+					</dict>
+					<key>4</key>
+					<dict>
+						<key>name</key>
+						<string>entity.name.function.smt</string>
+					</dict>
+				</dict>
+				<key>comment</key>
+				<string>define-fun
                        define-fun-rec
                        define-sort</string>
-			<key>match</key>
-			<string>(\b(?i:(define-fun|define-fun-rec|define-sort))\b)(\s+)((\w|\.|\||_|@|%|\-|\!|\?)*)</string>
-			<key>name</key>
-			<string>meta.function.define.smt</string>
-		</dict>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>storage.type.function-type.smt</string>
-				</dict>
-				<key>4</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.function.smt</string>
-				</dict>
+				<key>match</key>
+				<string>(\b(?i:(define-fun|define-fun-rec|define-sort))\b)(\s+)((\w|\.|\||_|@|%|\-|\!|\?)*)</string>
+				<key>name</key>
+				<string>meta.function.define.smt</string>
 			</dict>
-			<key>comment</key>
-			<string>declare-const
+			<dict>
+				<key>captures</key>
+				<dict>
+					<key>2</key>
+					<dict>
+						<key>name</key>
+						<string>storage.type.function-type.smt</string>
+					</dict>
+					<key>4</key>
+					<dict>
+						<key>name</key>
+						<string>entity.name.function.smt</string>
+					</dict>
+				</dict>
+				<key>comment</key>
+				<string>declare-const
                        declare-fun
                        declare-sort</string>
-			<key>match</key>
-			<string>(\b(?i:(declare-sort|declare-fun|declare-const))\b)(\s+)((\w|\.|\||_|@|%|\-|\!|\?)*)</string>
-			<key>name</key>
-			<string>meta.function.declare.smt</string>
-		</dict>
-		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.constant.smt</string>
-				</dict>
+				<key>match</key>
+				<string>(\b(?i:(declare-sort|declare-fun|declare-const))\b)(\s+)((\w|\.|\||_|@|%|\-|\!|\?)*)</string>
+				<key>name</key>
+				<string>meta.function.declare.smt</string>
 			</dict>
-			<key>match</key>
-			<string>(#|\?)(\w|[\\+-=&lt;&gt;'"&amp;#])+</string>
-			<key>name</key>
-			<string>constant.character.smt</string>
-		</dict>
-		<dict>
-			<key>captures</key>
 			<dict>
-				<key>1</key>
+				<key>captures</key>
 				<dict>
-					<key>name</key>
-					<string>punctuation.definition.variable.smt</string>
+					<key>1</key>
+					<dict>
+						<key>name</key>
+						<string>punctuation.definition.constant.smt</string>
+					</dict>
 				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.variable.smt</string>
-				</dict>
+				<key>match</key>
+				<string>(#|\?)(\w|[\\+-=&lt;&gt;'"&amp;#])+</string>
+				<key>name</key>
+				<string>constant.character.smt</string>
 			</dict>
-			<key>match</key>
-			<string>(\*)(\S*)(\*)</string>
-			<key>name</key>
-			<string>variable.other.global.smt</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>! FIXME 
+			<dict>
+				<key>captures</key>
+				<dict>
+					<key>1</key>
+					<dict>
+						<key>name</key>
+						<string>punctuation.definition.variable.smt</string>
+					</dict>
+					<key>3</key>
+					<dict>
+						<key>name</key>
+						<string>punctuation.definition.variable.smt</string>
+					</dict>
+				</dict>
+				<key>match</key>
+				<string>(\*)(\S*)(\*)</string>
+				<key>name</key>
+				<string>variable.other.global.smt</string>
+			</dict>
+			<dict>
+				<key>comment</key>
+				<string>! FIXME 
                      _
                      as
                      exists
                      forall
                      let
                      par</string>
-			<key>match</key>
-			<string>\b(?i:as|let|exists|forall|distinct|par|_)\b</string>
-			<key>name</key>
-			<string>keyword.control.smt</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>
+				<key>match</key>
+				<string>\b(?i:as|let|exists|forall|par|_)\b</string>
+				<key>name</key>
+				<string>keyword.control.smt</string>
+			</dict>
+			<dict>
+				<key>comment</key>
+				<string>
 				FIXME word boundaries are needed here.
 			          :all-statistics              
                       :assertion-stack-levels
@@ -179,19 +172,19 @@
                       :values
                       :verbosity
                       :version</string>
-			<key>match</key>
-			<string>(\:)(assertion-stack-levels|authors|chainable|definition|diagnostic-output-channel
+				<key>match</key>
+				<string>(\:)(assertion-stack-levels|authors|chainable|definition|diagnostic-output-channel
                       |error-behavior|extensions|funs|funs-description|global-declarations|interactive-mode
                       |language|left-assoc|name|named|notes|pattern|print-success|produce-assignments
                       |produce-models|produce-proofs|produce-unsat-assumptions|produce-unsat-cores
                       |random-seed|reason-unknown|regular-output-channel|reproducible-resource-limit|right-assoc
                       |sorts|sorts-description|status|theories|values|verbosity|version)</string>
-			<key>name</key>
-			<string>keyword.other.predefined.smt</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>assert
+				<key>name</key>
+				<string>keyword.other.predefined.smt</string>
+			</dict>
+			<dict>
+				<key>comment</key>
+				<string>assert
                      check-sat
                      check-sat-assuming
                      echo
@@ -212,41 +205,41 @@
                      set-info
                      set-logic
                      set-option</string>
-			<key>match</key>
-			<string>\b(?i:assert|check-sat|check-sat-assuming|echo|exit
+				<key>match</key>
+				<string>\b(?i:assert|check-sat|check-sat-assuming|echo|exit
                      |get-assertions|get-assignment|get-info|get-model|get-option
                      |get-proof|get-unsat-assumptions|get-unsat-core|get-value
 					 |pop|push|reset|reset-assertions|set-info|set-logic|set-option)\b</string>
-			<key>name</key>
-			<string>keyword.control.commands.smt</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(?i:ite|not|or|and|xor)\b</string>
-			<key>name</key>
-			<string>keyword.operator.core.smt</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(?i:array|store|extract)\b</string>
-			<key>name</key>
-			<string>keyword.operator.array.smt</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(BitVec|select|concat|bvnot|bvneg|bvand|bvor|bvxor|bvadd|bvmul|bvudiv|bvurem|bvshl|bvlshr|bvult|bv[0-9]+)\b</string>
-			<key>name</key>
-			<string>keyword.operator.bitvector.smt</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(Int|div|mod|abs)\b</string>
-			<key>name</key>
-			<string>keyword.operator.ints.smt</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>
+				<key>name</key>
+				<string>keyword.control.commands.smt</string>
+			</dict>
+			<dict>
+				<key>match</key>
+				<string>\b(?i:ite|not|or|and|xor|distinct)\b</string>
+				<key>name</key>
+				<string>keyword.operator.core.smt</string>
+			</dict>
+			<dict>
+				<key>match</key>
+				<string>\b(?i:array|store|extract)\b</string>
+				<key>name</key>
+				<string>keyword.operator.array.smt</string>
+			</dict>
+			<dict>
+				<key>match</key>
+				<string>\b(BitVec|select|concat|bvnot|bvneg|bvand|bvor|bvxor|bvadd|bvmul|bvudiv|bvurem|bvshl|bvlshr|bvult|bv[0-9]+)\b</string>
+				<key>name</key>
+				<string>keyword.operator.bitvector.smt</string>
+			</dict>
+			<dict>
+				<key>match</key>
+				<string>\b(Int|div|mod|abs)\b</string>
+				<key>name</key>
+				<string>keyword.operator.ints.smt</string>
+			</dict>
+			<dict>
+				<key>comment</key>
+				<string>
 			    roundNearestTiesToEven RNE 
                 roundNearestTiesToAway RNA 
                 roundTowardPositive    RTP 
@@ -261,32 +254,32 @@
 			    +zero
 			    -zero
 </string>
-			<key>match</key>
-			<string>\b(RoundingMode|FloatingPoint|Nan|div|mod|abs)\b</string>
-			<key>name</key>
-			<string>keyword.operator.floatingpoint.smt</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(Real)\b</string>
-			<key>name</key>
-			<string>keyword.operator.reals.smt</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(divisible|to_real|to_int|is_int)\b</string>
-			<key>name</key>
-			<string>keyword.operator.reals_ints.smt</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(?i:eq|neq|and|or)\b</string>
-			<key>name</key>
-			<string>keyword.operator.smt</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>Bool
+				<key>match</key>
+				<string>\b(RoundingMode|FloatingPoint|Nan|div|mod|abs)\b</string>
+				<key>name</key>
+				<string>keyword.operator.floatingpoint.smt</string>
+			</dict>
+			<dict>
+				<key>match</key>
+				<string>\b(Real)\b</string>
+				<key>name</key>
+				<string>keyword.operator.reals.smt</string>
+			</dict>
+			<dict>
+				<key>match</key>
+				<string>\b(divisible|to_real|to_int|is_int)\b</string>
+				<key>name</key>
+				<string>keyword.operator.reals_ints.smt</string>
+			</dict>
+			<dict>
+				<key>match</key>
+				<string>\b(?i:eq|neq|and|or)\b</string>
+				<key>name</key>
+				<string>keyword.operator.smt</string>
+			</dict>
+			<dict>
+				<key>comment</key>
+				<string>Bool
                      continued-execution
                      error
                      false
@@ -301,73 +294,68 @@
                      unknown
                      unsupported
                      unsat</string>
-			<key>match</key>
-			<string>\b(Bool|true|false)\b</string>
-			<key>name</key>
-			<string>constant.language.smt</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>(?&lt;![-\w])(?i:cons|car|cdr|cond|lambda|format|setq|setf|quote|eval|append|list|listp|memberp|t|load|progn)(?![-\w])</string>
-			<key>name</key>
-			<string>support.function.smt</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\b</string>
-			<key>name</key>
-			<string>constant.numeric.smt</string>
-		</dict>
-		<dict>
-			<key>comment</key>
-			<string>
+				<key>match</key>
+				<string>\b(Bool|true|false)\b</string>
+				<key>name</key>
+				<string>constant.language.smt</string>
+			</dict>
+			<dict>
+				<key>match</key>
+				<string>\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\.?[0-9]*)|(\.[0-9]+))((e|E)(\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\b</string>
+				<key>name</key>
+				<string>constant.numeric.smt</string>
+			</dict>
+			<dict>
+				<key>comment</key>
+				<string>
 				The symbols (always quirky in regex).
 			</string>
-			<key>match</key>
-			<string>(?x)
+				<key>match</key>
+				<string>(?x)
 				(?&lt;=(\s|\()) # preceded by space or (
 				( &gt; | &lt; | &gt;= | &lt;= | =&gt; | = | ! | [*/+-] )
 				(?=(\s|\()) # followed by space or (
 				</string>
-			<key>name</key>
-			<string>keyword.operator.logical.smt</string>
-		</dict>
-		<dict>
-			<key>begin</key>
-			<string>"</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>0</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.string.begin.smt</string>
-				</dict>
+				<key>name</key>
+				<string>keyword.operator.logical.smt</string>
 			</dict>
-			<key>end</key>
-			<string>"</string>
-			<key>endCaptures</key>
 			<dict>
-				<key>0</key>
+				<key>begin</key>
+				<string>"</string>
+				<key>beginCaptures</key>
 				<dict>
-					<key>name</key>
-					<string>punctuation.definition.string.end.smt</string>
+					<key>0</key>
+					<dict>
+						<key>name</key>
+						<string>punctuation.definition.string.begin.smt</string>
+					</dict>
 				</dict>
+				<key>end</key>
+				<string>"</string>
+				<key>endCaptures</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>name</key>
+						<string>punctuation.definition.string.end.smt</string>
+					</dict>
+				</dict>
+				<key>name</key>
+				<string>string.quoted.double.smt</string>
+				<key>patterns</key>
+				<array>
+					<dict>
+						<key>match</key>
+						<string>\\.</string>
+						<key>name</key>
+						<string>constant.character.escape.smt</string>
+					</dict>
+				</array>
 			</dict>
-			<key>name</key>
-			<string>string.quoted.double.smt</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>match</key>
-					<string>\\.</string>
-					<key>name</key>
-					<string>constant.character.escape.smt</string>
-				</dict>
-			</array>
-		</dict>
-	</array>
-	<key>scopeName</key>
-	<string>source.smt</string>
+		</array>
+	</dict>
+	<key>isDelta</key>
+	<true/>
 	<key>uuid</key>
 	<string>347F9A84-DA5E-4A31-8EDB-7F354E784B67</string>
 </dict>
