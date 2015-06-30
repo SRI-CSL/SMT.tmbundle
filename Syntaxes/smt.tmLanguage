@@ -3,7 +3,15 @@
 <plist version="1.0">
 <dict>
 	<key>comment</key>
-	<string></string>
+	<string>
+	 This grammar is written by non-textmate users; mainly in order to push the 
+	 grammar to the linguist repository. This is to enable highlighting of SMT code
+	 on GitHub.
+	
+	 Any improvements are welcome. We are confirmed novices.
+		iam@csl.sri.com
+		bruno@csl.sri.com
+	</string>
 	<key>fileTypes</key>
 	<array>
 		<string>smt2</string>
@@ -67,14 +75,22 @@
 			
 				Our notion of symbol is currently wrong. Here is what the standard says:
 
-				&lt;simple_symbol&gt; := non-empty sequence of letters, digits and the characters
+				&lt;simple_symbol&gt; ::= non-empty sequence of letters, digits and the characters
 				+ - / * = % ? ! . $ _  ̃ &amp; ˆ &lt;&gt; @
 				that does not start with a digit (or . and @ )
+			
+                &lt;symbol&gt; ::= &lt;simple_symbol&gt;  |
+                             a sequence of whitespace and printable characters that
+                             starts and ends with | and does not otherwise include | or /
+			
 			
 			
 			</string>
 			<key>match</key>
-			<string>(\b(?i:(define-fun|define-fun-rec|define-sort))\b)(\s+)((\w|\.|\||_|@|%|\-|\!|\?)*)</string>
+			<string>(?x)                                                  (?# multiline mode )
+			         (\b(?i:(define-fun|define-fun-rec|define-sort))\b)
+					 (\s+)
+					 ((\w|\.|\||_|@|%|\-|\!|\?)*)</string>
 			<key>name</key>
 			<string>meta.function.define.smt</string>
 		</dict>
@@ -116,27 +132,8 @@
 			<string>constant.character.smt</string>
 		</dict>
 		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.variable.smt</string>
-				</dict>
-				<key>3</key>
-				<dict>
-					<key>name</key>
-					<string>punctuation.definition.variable.smt</string>
-				</dict>
-			</dict>
-			<key>match</key>
-			<string>(\*)(\S*)(\*)</string>
-			<key>name</key>
-			<string>variable.other.global.smt</string>
-		</dict>
-		<dict>
 			<key>comment</key>
-			<string>! FIXME 
+			<string>! ( FIXME  ! currently lives down with the symbols in keyword.operator.logical.smt)
                      _
                      as
                      exists
@@ -151,7 +148,7 @@
 		<dict>
 			<key>comment</key>
 			<string>
-				FIXME word boundaries are needed here.
+				(FIXME word boundaries are needed here.)
 			          :all-statistics              
                       :assertion-stack-levels
                       :authors
@@ -242,8 +239,10 @@
 			<string>keyword.operator.array.smt</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>(FIXME iam does not see bvsub anywhere in the spec.)</string>
 			<key>match</key>
-			<string>\b(BitVec|select|concat|bvnot|bvneg|bvand|bvor|bvxor|bvadd|bvmul|bvudiv|bvurem|bvshl|bvlshr|bvult|bv[0-9]+)\b</string>
+			<string>\b(BitVec|select|concat|bvsub|bvnot|bvneg|bvand|bvor|bvxor|bvadd|bvmul|bvudiv|bvurem|bvshl|bvlshr|bvult|bv[0-9]+)\b</string>
 			<key>name</key>
 			<string>keyword.operator.bitvector.smt</string>
 		</dict>
