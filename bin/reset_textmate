@@ -1,0 +1,5 @@
+rm -rf ~/Library/Application\ Support/Textmate
+rm -rf ~/Library/Application\ Support/Avian
+rm -rf ~/Library/Preferences/com.macromates.*
+rm -rf ~/Library/Caches/com.macromates.*
+sudo rm -rf /private/var/db/BootCaches/5992F858-3F43-4FBF-A61A-22F5D0FA4579/app.com.macromates.TextMate.preview.playlist
