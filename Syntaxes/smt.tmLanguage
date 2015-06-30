@@ -63,7 +63,16 @@
 			<key>comment</key>
 			<string>define-fun
                        define-fun-rec
-                       define-sort</string>
+                       define-sort
+			
+				Our notion of symbol is currently wrong. Here is what the standard says:
+
+				&lt;simple_symbol&gt; := non-empty sequence of letters, digits and the characters
+				+ - / * = % ? ! . $ _  ̃ &amp; ˆ &lt;&gt; @
+				that does not start with a digit (or . and @ )
+			
+			
+			</string>
 			<key>match</key>
 			<string>(\b(?i:(define-fun|define-fun-rec|define-sort))\b)(\s+)((\w|\.|\||_|@|%|\-|\!|\?)*)</string>
 			<key>name</key>
