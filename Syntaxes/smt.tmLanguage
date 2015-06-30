@@ -144,7 +144,7 @@
                      let
                      par</string>
 			<key>match</key>
-			<string>\b(?i:as|let|exists|forall|distinct|par|_)\b</string>
+			<string>\b(?i:as|let|exists|forall|par|_)\b</string>
 			<key>name</key>
 			<string>keyword.control.smt</string>
 		</dict>
@@ -231,7 +231,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:ite|not|or|and|xor)\b</string>
+			<string>\b(?i:ite|not|or|and|xor|distinct)\b</string>
 			<key>name</key>
 			<string>keyword.operator.core.smt</string>
 		</dict>
@@ -309,17 +309,13 @@
                      true
                      unknown
                      unsupported
-                     unsat</string>
+                     unsat
+			</string>
 			<key>match</key>
-			<string>\b(Bool|true|false)\b</string>
+			<string>\b(Bool|continued-execution|error|false|immediate-exit|incomplete|logic
+                    	|memout|sat|success|theory|true|unknown|unsupported|unsat)\b</string>
 			<key>name</key>
 			<string>constant.language.smt</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>(?&lt;![-\w])(?i:cons|car|cdr|cond|lambda|format|setq|setf|quote|eval|append|list|listp|memberp|t|load|progn)(?![-\w])</string>
-			<key>name</key>
-			<string>support.function.smt</string>
 		</dict>
 		<dict>
 			<key>match</key>
