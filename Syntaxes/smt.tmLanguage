@@ -234,15 +234,25 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(?i:array|store|extract)\b</string>
+			<string>\b(?i:array|select|store)\b</string>
 			<key>name</key>
 			<string>keyword.operator.array.smt</string>
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>(FIXME iam does not see bvsub anywhere in the spec.)</string>
+			<string>OK so there are theories, and there are logics. Seems like a lot of the
+			 bitvector operations are defined not in the bitvector theory, but rather in the
+			 QF_BV logic. We shall try to be systematic. Sooooooo:
+			
+			
+			
+			</string>
 			<key>match</key>
-			<string>\b(BitVec|select|concat|bvsub|bvnot|bvneg|bvand|bvor|bvxor|bvadd|bvmul|bvudiv|bvurem|bvshl|bvlshr|bvult|bv[0-9]+)\b</string>
+			<string>(?x)
+					 \b(BitVec|concat|extract|bvnot|bvneg|bvand|bvor|bvadd|bvmul|bvudiv|bvurem|bvshl|bvlshr|bvult   (?#  FixedSizeBitVectors )
+					 |bvnand|bvnor|bvxor|bvxnor|bvcomp|bvsub|bvsdiv|bvsrem|bvsmod|bvashr|repeat|zero_extend         (?#  QF_BV)
+					 |sign_extend|rotate_left|rotate_right|bvule|bvugt|bvuge|bvslt|bvsle|bvsgt|bvsge|bv[0-9]+       (?#  QF_BV)
+				 	)\b</string>
 			<key>name</key>
 			<string>keyword.operator.bitvector.smt</string>
 		</dict>
@@ -335,6 +345,39 @@
 				</string>
 			<key>name</key>
 			<string>keyword.operator.logical.smt</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>\|</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.symbol.begin.smt</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>\|</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.symbol.end.smt</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>variable.parameter.symbol.smt</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>\\.</string>
+					<key>name</key>
+					<string>constant.character.escape.smt</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>begin</key>
