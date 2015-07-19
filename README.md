@@ -6,6 +6,15 @@
 
 This is a TextMate support for viewing and editing version 2.5 of [SMT-LIB2.](http://smtlib.cs.uiowa.edu/papers/smt-lib-reference-v2.5-r150528.pdf)
 
+## Why?
+
+This bundle is written by non-textmate users; mainly in order to push the 
+grammar to the linguist repository. This is to enable highlighting of SMT code
+on GitHub.
+	
+Any improvements are welcome. We are confirmed novices.
+
+
 ### TextMate 2 Development Instructions.
 
 The [FAQ](https://github.com/textmate/textmate/wiki/FAQ) says the following:
