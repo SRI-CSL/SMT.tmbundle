@@ -9,7 +9,8 @@ This is a TextMate support for viewing and editing version 2.5 of [SMT-LIB2.](ht
 ## Why?
 
 This bundle is written by non-textmate users; mainly in order to push the 
-grammar to the linguist repository. This is to enable highlighting of SMT code
+grammar to the [linguist](https://github.com/github/linguist.git) repository.
+This is to enable highlighting of SMT-LIB2 code
 on GitHub.
 	
 Any improvements are welcome. We are confirmed novices.
