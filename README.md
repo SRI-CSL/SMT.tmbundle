@@ -23,7 +23,7 @@ The [FAQ](https://github.com/textmate/textmate/wiki/FAQ) says the following:
 
 If you wish to edit the bundles and share your changes you should install (git clone) them to:
 ```
-~/Library/Application Support/Avian/Bundles
+~/Library/Application Support/TextMate/Bundles
 ```
 
 This way, TextMate won’t create delta files (which aren’t useful for sharing).
